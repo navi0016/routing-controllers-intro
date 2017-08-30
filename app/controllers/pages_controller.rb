@@ -2,14 +2,15 @@ class PagesController < ApplicationController
   before_action :set_kitten_url, only: [:kitten, :kittens]
 
 def welcome
-  @header = "Welcome to my Crib!"
+  # @header = "Welcome to my Crib!"
 end
 
 def about
 end
 
 def contest
-  @header = "I will go on top"
+  flash[:notice] = "Sorry, the contest has ended"
+  redirect_to "/welcome"
 end
 
 def kitten
